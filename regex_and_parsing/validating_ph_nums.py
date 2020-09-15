@@ -11,13 +11,10 @@ def validate_ph_num(ph):
     - No alpha chars are present
     """
 
-    if len(ph) != 10:
-        print("NO")
+    if re.search("^[7-9]\d{9}$",ph):
+        print("YES")
     else:
-        if re.search("^[7-9]", ph[0]) and not re.search("[a-zA-Z]", ph):
-            print("YES")
-        else:
-            print("NO")
+        print("NO")
 
 # Test data
 validate_ph_num("71234567898")
